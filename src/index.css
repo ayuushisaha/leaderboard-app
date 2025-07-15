@@ -1,0 +1,23 @@
+/* client/src/index.css */
+
+/* Basic reset or global styles if needed */
+body {
+    margin: 0; /* Remove default body margin */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased; /* Improve font rendering on macOS/iOS */
+    -moz-osx-font-smoothing: grayscale; /* Improve font rendering on macOS/iOS */
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+        monospace; /* Monospaced font for code snippets */
+}
+
+/* Ensure root element takes full height */
+#root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}

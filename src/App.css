@@ -1,0 +1,987 @@
+/* client/src/App.css - Refined UI */
+
+/* General Body and Container Styling */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Darker, more vibrant background theme - Deep Purple to Dark Blue */
+    background: linear-gradient(to bottom right, #2c0b40, #1a0833, #0f041c); 
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0; /* Lighter text for dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.app-container {
+    max-width: 950px;
+    width: 95%;
+    margin: 20px auto;
+    /* Darker, slightly transparent background for the main container - Deep Charcoal */
+    background: rgba(25, 25, 25, 0.98); 
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6); /* Stronger shadow for depth */
+    overflow: hidden;
+    border: 1px solid #3a3a3a; /* Darker border */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* NEW: Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: rgba(35, 35, 35, 0.95); /* Darker background for top bar */
+    border-bottom: 1px solid #4a4a4a; /* Darker border */
+    color: #ccc; /* Lighter text */
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+.nav-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.2s ease;
+}
+.nav-icon:hover {
+    background-color: #4a4a4a; /* Darker hover */
+}
+.nav-icon svg {
+    width: 20px;
+    height: 20px;
+    color: #ccc; /* Lighter icon color */
+}
+
+.ranking-tabs {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ranking-tab {
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 15px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    white-space: nowrap;
+}
+
+.ranking-tab:hover {
+    background-color: #6a0dad; /* Purple hover */
+    color: white;
+}
+
+.ranking-tab.active {
+    background-color: #8a2be2; /* Active purple */
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(138, 43, 226, 0.4);
+}
+
+/* NEW: Time Filters */
+.time-filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: rgba(40, 40, 40, 0.95); /* Darker background */
+    border-bottom: 1px solid #4a4a4a;
+}
+
+.time-filter-tab {
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 20px;
+    background-color: #555; /* Darker grey */
+    color: #eee; /* Lighter text */
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.time-filter-tab:hover {
+    background-color: #777;
+}
+
+.time-filter-tab.active {
+    background-color: #ff6a88; /* Pink from UI (retained for contrast) */
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(255, 106, 136, 0.4);
+}
+
+
+/* Header/Banner Styling - More elaborate */
+.app-header {
+    /* Richer, deeper gradient for the header */
+    background: linear-gradient(to bottom, #8a2be2, #4b0082); /* Purple to Indigo gradient */
+    padding: 30px 20px 120px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    border-radius: 0 0 50% 50% / 0 0 10% 10%;
+    box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: -1px;
+}
+
+.app-header h1 {
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 800;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+.settlement-time {
+    font-size: 0.9em;
+    font-weight: 500;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.main-logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+}
+
+.trophy-icon-placeholder {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: #ffd700; /* Gold color */
+    border-radius: 50%;
+    border: 5px solid #e6b800;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+.trophy-icon-placeholder::before {
+    content: '🏆';
+    font-size: 1.5em;
+    line-height: 1;
+}
+
+.logo-wings {
+    position: absolute;
+    width: 80px;
+    height: auto;
+    color: #fff;
+    z-index: 0;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.4));
+}
+.left-wing {
+    left: -40px;
+    transform: rotateY(180deg);
+}
+.right-wing {
+    right: -40px;
+}
+
+.rewards-icon-top {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 600;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.4);
+}
+.rewards-icon-top svg {
+    width: 30px;
+    height: 30px;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
+/* NEW: Total Prizes Section */
+.total-prizes-section {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #3a3a3a; /* Darker background */
+    padding: 15px 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #eee; /* Lighter text */
+    z-index: 10;
+    border: 1px solid #555;
+    white-space: nowrap;
+}
+.prize-amount {
+    color: #fdbb2d; /* Orange/gold for prize amount */
+    font-size: 1.2em;
+    font-weight: 700;
+}
+.prize-icon {
+    font-size: 1.5em;
+}
+
+
+/* NEW: Feature Sections (Contribution, Star Tasks, Rewards) */
+.feature-sections {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    margin-top: 80px;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* Darker background for feature cards - subtle gradient */
+    background: linear-gradient(to bottom right, #333, #444); 
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #ccc; /* Lighter text */
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 120px;
+    text-align: center;
+    border: 1px solid #555;
+}
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.feature-icon-circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+.feature-icon-circle svg {
+    width: 28px;
+    height: 28px;
+    color: white;
+}
+.feature-icon-circle.bg-orange { background-color: #ff416c; } /* Brighter orange */
+.feature-icon-circle.bg-purple { background-color: #8a2be2; }
+.feature-icon-circle.bg-pink { background-color: #ff6a88; }
+
+.contribution-avatars {
+    display: flex;
+    margin-top: 5px;
+}
+.contribution-avatars .small-avatar {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    margin-left: -5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+.contribution-avatars .small-avatar:first-child {
+    margin-left: 0;
+}
+.contribution-avatars .more-users {
+    background-color: #555; /* Darker grey */
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-left: -5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    color: #ccc;
+}
+
+
+/* Main Content Area below banner */
+.main-content-area {
+    padding: 30px;
+    background-color: #1a1a1a; /* Very dark background for main content area */
+    border-radius: 0 0 20px 20px;
+    position: relative;
+    z-index: 5;
+}
+
+
+/* Error Message Styling */
+.error-message {
+    background-color: #5c0000;
+    color: #ffaaaa;
+    border: 1px solid #ff4444;
+    padding: 12px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Interaction Section Styling (moved down in UI flow) */
+.interaction-section {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    /* Increased margin-bottom to fix collision */
+    margin-bottom: 80px; 
+    padding: 25px;
+    background: linear-gradient(to right, #3a3a3a, #4a4a4a);
+    border-radius: 15px;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #555;
+}
+
+.user-selection,
+.add-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.user-selection label {
+    font-weight: 600;
+    color: #ccc;
+    font-size: 1.1em;
+    min-width: 80px;
+}
+
+.user-selection select,
+.add-user input[type="text"] {
+    padding: 12px 15px;
+    border: 1px solid #777;
+    border-radius: 10px;
+    font-size: 1em;
+    flex-grow: 1;
+    background-color: #333;
+    color: #eee;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-selection select:focus,
+.add-user input[type="text"]:focus {
+    border-color: #00c6ff;
+    box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.5);
+    outline: none;
+}
+
+/* Button Styling - Enhanced */
+.user-selection button,
+.add-user button {
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #00c6ff, #007bff);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.05em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 198, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.user-selection button:hover,
+.add-user button:hover {
+    background: linear-gradient(45deg, #0099cc, #0056b3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 198, 255, 0.5);
+}
+
+.user-selection button:active,
+.add-user button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 198, 255, 0.3);
+}
+
+.user-selection button:disabled,
+.add-user button:disabled {
+    background: #555;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+}
+
+.claimed-message {
+    margin-left: 10px;
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 1.1em;
+    animation: fadeInOut 2s forwards;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-10px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(10px); }
+}
+
+/* Leaderboard Section Styling */
+.leaderboard-section {
+    margin-bottom: 50px;
+}
+
+.leaderboard-section h2,
+.claim-history-section h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    color: #00c6ff; /* Cyan heading */
+    font-size: 2.2em;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.leaderboard-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+    position: relative;
+    /* Increased min-height to ensure enough space for staggered cards and prevent collision */
+    min-height: 280px; 
+}
+
+/* Top Rank Card Styling */
+.top-rank-card {
+    background-color: #3a3a3a;
+    border: 2px solid #666;
+    border-radius: 50%;
+    padding: 10px;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    top: 0;
+    transform: translateX(-50%);
+    z-index: 1;
+    color: #eee;
+    font-weight: 600;
+}
+
+/* Specific positioning for top 3 cards */
+.top-rank-card.rank-1 {
+    left: 50%;
+    top: 30px; /* Adjusted from -50px to 30px to move it down */
+    transform: translateX(-50%) scale(1.2);
+    z-index: 3;
+    background: linear-gradient(145deg, #ffd700, #ffc107); /* Gold gradient */
+    border-color: #e6b800;
+    box-shadow: 0 10px 30px rgba(255, 193, 7, 0.7);
+    color: #333;
+}
+.top-rank-card.rank-2 {
+    left: 20%;
+    top: 110px; /* Adjusted from 30px to 110px */
+    transform: translateX(-50%) scale(1.05);
+    z-index: 2;
+    background: linear-gradient(145deg, #c0c0c0, #a9a9a9); /* Silver gradient */
+    border-color: #9e9e9e;
+    box-shadow: 0 8px 25px rgba(169, 169, 169, 0.7);
+    color: #333;
+}
+.top-rank-card.rank-3 {
+    left: 80%;
+    top: 110px; /* Adjusted from 30px to 110px */
+    transform: translateX(-50%) scale(1.05);
+    z-index: 2;
+    background: linear-gradient(145deg, #cd7f32, #b86b20); /* Bronze gradient */
+    border-color: #a35d18;
+    box-shadow: 0 8px 25px rgba(205, 127, 50, 0.7);
+    color: #333;
+}
+
+/* User Avatar in Top Rank Card */
+.top-rank-card .user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 5px;
+}
+.top-rank-card.rank-1 .user-avatar { border-color: #e6b800; }
+.top-rank-card.rank-2 .user-avatar { border-color: #9e9e9e; }
+.top-rank-card.rank-3 .user-avatar { border-color: #a35d18; }
+
+
+/* Rank Badge (1st, 2nd, 3rd symbols) */
+.rank-badge {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 2.5em;
+    line-height: 1;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    z-index: 4;
+}
+.top-rank-card.rank-1 .rank-badge { top: 10px; right: 10px; font-size: 3em; }
+
+
+.top-rank-card .user-name {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    color: inherit;
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.2);
+    word-break: break-word;
+}
+
+.top-rank-card .total-points {
+    font-size: 1em;
+    color: inherit;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.points-gem-icon {
+    font-size: 0.9em;
+    color: #8a2be2;
+}
+.top-rank-card.rank-1 .points-gem-icon,
+.top-rank-card.rank-2 .points-gem-icon,
+.top-rank-card.rank-3 .points-gem-icon {
+    color: #fff; /* Gem icon white for top 3 to stand out */
+}
+
+
+/* Leaderboard List Styling (for ranks 4+) */
+.leaderboard-list {
+    list-style: none;
+    padding: 0;
+    /* Adjusted margin-top to prevent collision */
+    margin-top: 250px; /* Increased from 220px */
+}
+
+.leaderboard-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    /* Darker background for list items - subtle gradient */
+    background: linear-gradient(to right, #2a2a2a, #333); 
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease;
+    border: 1px solid #4a4a4a;
+    color: #eee;
+}
+
+.leaderboard-item:hover {
+    background: linear-gradient(to right, #333, #4a4a4a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
+}
+
+.leaderboard-item .rank {
+    font-weight: bold;
+    color: #00c6ff; /* Cyan rank number */
+    width: 40px;
+    text-align: left;
+    font-size: 1em;
+}
+
+/* User avatar in list items */
+.list-user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid #555;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.leaderboard-item .name {
+    flex-grow: 1;
+    font-weight: 600;
+    color: #eee;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.small-person-icon {
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+
+.leaderboard-item .points {
+    font-weight: bold;
+    color: #4CAF50;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+/* Claim History Section Styling */
+.claim-history-section {
+    margin-top: 50px;
+    padding: 0 30px 30px 30px;
+}
+
+.claim-history-list {
+    list-style: none;
+    padding: 0;
+}
+
+.claim-history-item {
+    /* Darker background for history items - subtle gradient */
+    background: linear-gradient(to right, #2a2a2a, #333); 
+    border: 1px solid #444;
+    padding: 12px 20px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    color: #eee;
+}
+
+.history-user-name {
+    font-weight: bold;
+    color: #00c6ff;
+}
+
+.history-points {
+    font-weight: bold;
+    color: #ff416c;
+}
+
+.history-timestamp {
+    font-style: italic;
+    color: #aaa;
+    font-size: 0.85em;
+}
+
+/* Loading Message Style */
+.loading-message {
+    text-align: center;
+    font-size: 1.2em;
+    color: #00c6ff;
+    margin: 20px 0;
+    font-weight: 600;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .app-container {
+        padding: 0;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+
+    .top-nav {
+        padding: 10px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .ranking-tabs {
+        gap: 10px;
+        flex-basis: 100%;
+        order: 3;
+    }
+    .nav-icon {
+        flex-basis: auto;
+    }
+    .nav-icon:first-child { order: 1; }
+    .nav-icon:last-child { order: 2; }
+
+
+    .time-filters {
+        padding: 8px 15px;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    .time-filter-tab {
+        padding: 5px 10px;
+        font-size: 0.85em;
+    }
+
+    .app-header {
+        padding: 20px 15px 80px 15px;
+        border-radius: 0 0 40% 40% / 0 0 8% 8%;
+    }
+    .app-header h1 {
+        font-size: 2em;
+    }
+    .settlement-time {
+        font-size: 0.8em;
+    }
+
+    .main-logo-container {
+        width: 160px;
+        height: 80px;
+    }
+    .trophy-icon-placeholder {
+        width: 80px;
+        height: 80px;
+        font-size: 2em;
+        border-width: 4px;
+    }
+    .trophy-icon-placeholder::before {
+        font-size: 1.2em;
+    }
+    .logo-wings {
+        width: 60px;
+    }
+    .left-wing { left: -30px; }
+    .right-wing { right: -30px; }
+
+    .rewards-icon-top {
+        top: 15px;
+        right: 15px;
+        font-size: 0.7em;
+    }
+    .rewards-icon-top svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .total-prizes-section {
+        bottom: -45px;
+        padding: 10px 20px;
+        font-size: 0.9em;
+        gap: 8px;
+    }
+    .prize-amount {
+        font-size: 1em;
+    }
+    .prize-icon {
+        font-size: 1.2em;
+    }
+
+    .feature-sections {
+        margin-top: 60px;
+        gap: 15px;
+        padding: 0 10px;
+    }
+    .feature-card {
+        padding: 10px;
+        font-size: 0.8em;
+        min-width: 100px;
+    }
+    .feature-icon-circle {
+        width: 40px;
+        height: 40px;
+    }
+    .feature-icon-circle svg {
+        width: 22px;
+        height: 22px;
+    }
+    .contribution-avatars .small-avatar,
+    .contribution-avatars .more-users {
+        width: 20px;
+        height: 20px;
+        font-size: 0.7em;
+    }
+
+
+    .main-content-area {
+        padding: 20px;
+    }
+
+    .interaction-section {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .user-selection,
+    .add-user {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .user-selection label {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 5px;
+    }
+
+    .user-selection select,
+    .add-user input[type="text"],
+    .user-selection button,
+    .add-user button {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .claimed-message {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .leaderboard-section h2,
+    .claim-history-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .leaderboard-grid {
+        min-height: 180px; /* Adjusted for smaller cards */
+        gap: 15px;
+    }
+
+    .top-rank-card {
+        width: 100px;
+        height: 100px;
+        padding: 8px;
+    }
+    .top-rank-card.rank-1 {
+        top: -40px;
+        transform: translateX(-50%) scale(1.1);
+    }
+    .top-rank-card.rank-2 {
+        left: 15%;
+        top: 20px;
+        transform: translateX(-50%) scale(0.95);
+    }
+    .top-rank-card.rank-3 {
+        left: 85%;
+        top: 20px;
+        transform: translateX(-50%) scale(0.95);
+    }
+
+    .top-rank-card .user-avatar {
+        width: 70px;
+        height: 70px;
+        border-width: 2px;
+    }
+    .rank-badge {
+        font-size: 2em;
+        top: 2px;
+        right: 2px;
+    }
+    .top-rank-card.rank-1 .rank-badge { font-size: 2.5em; top: 5px; right: 5px; }
+
+    .top-rank-card .user-name {
+        font-size: 1em;
+    }
+    .top-rank-card .total-points {
+        font-size: 0.8em;
+    }
+
+    .leaderboard-list {
+        margin-top: 120px; /* Adjusted space */
+    }
+
+    .leaderboard-item {
+        padding: 10px 15px;
+        font-size: 0.9em;
+    }
+    .list-user-avatar {
+        width: 35px;
+        height: 35px;
+    }
+    .leaderboard-item .rank {
+        width: 35px;
+    }
+
+    .claim-history-section {
+        padding: 0 15px 15px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-header h1 {
+        font-size: 1.6em;
+    }
+    .ranking-tabs {
+        font-size: 0.8em;
+    }
+    .time-filter-tab {
+        font-size: 0.75em;
+        padding: 4px 8px;
+    }
+    .top-rank-card {
+        width: 90px;
+        height: 90px;
+    }
+    .top-rank-card.rank-1 {
+        transform: translateX(-50%) scale(1.05);
+    }
+    .top-rank-card.rank-2, .top-rank-card.rank-3 {
+        transform: translateX(-50%) scale(0.9);
+    }
+    .top-rank-card .user-avatar {
+        width: 60px;
+        height: 60px;
+    }
+    .rank-badge {
+        font-size: 1.8em;
+    }
+    .top-rank-card.rank-1 .rank-badge { font-size: 2.2em; }
+    .top-rank-card .user-name {
+        font-size: 0.9em;
+    }
+    .top-rank-card .total-points {
+        font-size: 0.7em;
+    }
+    .leaderboard-list {
+        margin-top: 100px;
+    }
+}
