@@ -115,7 +115,7 @@ Create .env file:
 Create a file named .env in the server directory (at the same level as server.js).
 Add your MongoDB Atlas connection string and port:
 
-MONGODB_URI=mongodb+srv://name:YOUR_MONGODB_PASSWORD@cluster0.fntem7d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+MONGODB_URI= ur_api_key
 PORT=5000
 
 Replace YOUR_MONGODB_PASSWORD with your actual MongoDB Atlas database user password.
